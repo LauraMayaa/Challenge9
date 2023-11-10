@@ -1,0 +1,22 @@
+.my-kittens-bar {
+    width: 200px;
+    /* ajustez selon vos besoins */
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.kitten-item {
+    margin-bottom: 10px;
+}
+
+.kitten-item img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

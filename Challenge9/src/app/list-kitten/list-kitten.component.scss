@@ -1,0 +1,21 @@
+.kitten-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.kitten-item {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.kitten-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}

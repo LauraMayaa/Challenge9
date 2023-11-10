@@ -1,0 +1,10 @@
+<!-- barre sur le côté, qui référence mes chatons à moi avec l'image uniquement -->
+
+
+
+<div class="my-kittens-bar">
+    <h2>My Kittens</h2>
+    <div class="kitten-item" *ngFor="let kitten of userKittens">
+        <img [src]="kitten.image" alt="Kitten">
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<!-- Liste de chatons avec l'image affichée -->
+<div class="kitten-list">
+
+    <div class="kitten-item" *ngFor="let kitten of kittens">
+        <img [src]="kitten.image" alt="kitten">
+        <p>{{kitten.name}} </p>
+        <p>Race: {{kitten.race}} </p>
+        <p>Date de naissance: {{kitten.birthdate}} </p>
+        <button (clik)="onAdopt">Adopter</button>
+
+    </div>
+</div>
