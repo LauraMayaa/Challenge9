@@ -1,12 +1,9 @@
 <!-- Liste de chatons avec l'image affichée -->
-<div class="kitten-list">
 
-    <div class="kitten-item" *ngFor="let kitten of kittens">
-        <img [src]="kitten.image" alt="kitten">
-        <p>{{kitten.name}} </p>
-        <p>Race: {{kitten.race}} </p>
-        <p>Date de naissance: {{kitten.birthdate}} </p>
-        <button (clik)="onAdopt">Adopter</button>
+<div class="kitten-list" *ngIf="isAdopted == false">
 
-    </div>
+
+    <app-kitten-tile *ngFor="let kitten of kittens; let i = index" [kitten]="kitten"
+        (adopt)="adoptKitten(kitten)"></app-kitten-tile>
+
 </div>

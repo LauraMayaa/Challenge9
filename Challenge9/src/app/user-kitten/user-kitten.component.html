@@ -4,7 +4,11 @@
 
 <div class="my-kittens-bar">
     <h2>My Kittens</h2>
-    <div class="kitten-item" *ngFor="let kitten of userKittens">
+    <div class="kitten-item" *ngFor="let kitten of kittens">
+
         <img [src]="kitten.image" alt="Kitten">
+        <!-- <img [src]="kitten.image" alt="Kitten" *ngIf="kitten.adopted == false"> -->
+
+        <button (click)="adoptKitten()">delete</button>
     </div>
 </div>

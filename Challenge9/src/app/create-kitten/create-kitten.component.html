@@ -1,16 +1,27 @@
 <!-- formulaor d'ajout de chaton -->
-<form>
+<form [formGroup]="kittenForm" (ngSubmit)="onSubmit()">
     <label for="name">Nom du chaton</label>
-    <input type="text" id="name">
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="kittenForm.get('name')?.hasError('required') && kittenForm.get('name')?.touched"> Name is required.
+    </div>
 
     <label for="race">Race</label>
-    <input type="text" id="race">
+    <input type="text" id="race" formControlName="race">
+    <div *ngIf="kittenForm.get('race')?.hasError('required') && kittenForm.get('race')?.touched">
+        Race is required.
+    </div>
 
     <label for="birthdate">Date de naissance</label>
-    <input type="date" name="date" id="date">
+    <input type="date" name="date" id="date" formControlName="birthdate">
+    <div *ngIf="kittenForm.get('birthdate')?.hasError('required') && kittenForm.get('birthdate')?.touched">
+        Birthdate is required.
+    </div>
 
     <label for="imgUrl">url de l'image</label>
-    <input type="text" name="imgUrl" id="imgUrl">
+    <input type="text" name="imgUrl" id="imgUrl" formControlName="imgUrl">
+    <div *ngIf="kittenForm.get('imgUrl')?.hasError('required') && kittenForm.get('imgUrl')?.touched"> Image URL is
+        required.
+    </div>
 
-    <button type="submit">Save</button>
+    <button type="submit" [ngStyle]="{backgroundColor: isValid? 'blue' : 'transparent'}">Save</button>
 </form>

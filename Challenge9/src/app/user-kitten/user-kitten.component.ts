@@ -1,17 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Kitten } from '../kitten.model';
+import { KittenService } from '../kitten.service';
 
 @Component({
   selector: 'app-user-kitten',
   templateUrl: './user-kitten.component.html',
   styleUrls: ['./user-kitten.component.scss']
 })
-export class UserKittenComponent {
+export class UserKittenComponent implements OnInit {
 
-  userKittens = [
-    { image: 'https://www.operationkindness.org/wp-content/uploads/blog-kitten-nursery-operation-kindness.jpg' },
-    { image: 'https://www.zooplus.co.uk/magazine/wp-content/uploads/2021/01/striped-grey-kitten.jpg' },
-    // Ajoutez d'autres chatons avec leurs URL d'image
-  ];
+
+  kittens: Kitten[] = [];
+  isAdopted: boolean = true
+
+  constructor(public kittenService: KittenService) { }
+
+  ngOnInit() {
+    // console.table(this.kittens)
+    this.kittens = this.kittenService.getKittens();
+
+  }
+  adoptKitten() {
+
+    this.isAdopted = !this.isAdopted
+  }
 
 
 }
