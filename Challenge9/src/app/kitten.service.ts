@@ -33,6 +33,18 @@ export class KittenService {
     // return this.kittens
   }
 
+  public addKitten(newKitten: Kitten) {
+    // console.log(newKitten)
+    this.kittens.push(newKitten)
+    // console.log(this.kittens)
+
+    // prend en entrée un kitten
+
+    // ajoute au tableau
+  }
+
+
+
   // getAdoptedKittens(): Observable<Kitten[]> {
   //   return of(this.adoptedKittens);
   // }

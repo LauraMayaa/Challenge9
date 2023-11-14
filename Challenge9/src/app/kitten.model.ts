@@ -6,4 +6,5 @@ export class Kitten {
     adopted: boolean = false; // Ajout de la propriété "adopted"
 
 
+
 }

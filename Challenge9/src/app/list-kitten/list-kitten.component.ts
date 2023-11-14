@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Kitten } from '../kitten.model';
 import { KittenService } from '../kitten.service';
 import { Observable, of } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-list-kitten',
@@ -12,6 +13,7 @@ export class ListKittenComponent implements OnInit {
 
   isAdopted: boolean = false
   kittens$: Observable<Kitten[]> = of([]);
+  send$: Observable<FormGroup> = of()
   // adoptedKittens: [] = [];
 
   constructor(public kittenService: KittenService) { }
@@ -19,6 +21,7 @@ export class ListKittenComponent implements OnInit {
   ngOnInit() {
     // console.table(this.kittens)
     this.kittens$ = this.kittenService.getKittens();
+    
   }
 
   // adoptKitten(kitten: Kitten) {
