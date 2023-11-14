@@ -12,8 +12,8 @@ export class KittenTileComponent {
   @Output() adopt: EventEmitter<Kitten> = new EventEmitter<Kitten>();
 
   adoptKitten() {
-    // this.kitten.adopted = true
-    this.adopt.emit(this.kitten)
+    this.kitten.adopted = true
+    // this.adopt.emit(this.kitten)
   }
 
 }

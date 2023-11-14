@@ -1,9 +1,10 @@
 <!-- Liste de chatons avec l'image affichée -->
 
-<div class="kitten-list" *ngIf="isAdopted == false">
+<div class="kitten-list">
 
+    <div *ngFor="let k of kittens$|async">
+        <app-kitten-tile [kitten]="k" *ngIf="!k.adopted"></app-kitten-tile>
+    </div>
 
-    <app-kitten-tile *ngFor="let kitten of kittens; let i = index" [kitten]="kitten"
-        (adopt)="adoptKitten(kitten)"></app-kitten-tile>
 
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Kitten } from '../kitten.model';
 import { KittenService } from '../kitten.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-user-kitten',
@@ -10,14 +11,14 @@ import { KittenService } from '../kitten.service';
 export class UserKittenComponent implements OnInit {
 
 
-  kittens: Kitten[] = [];
+  kittens$: Observable<Kitten[]> = of();
   isAdopted: boolean = true
 
   constructor(public kittenService: KittenService) { }
 
   ngOnInit() {
     // console.table(this.kittens)
-    this.kittens = this.kittenService.getKittens();
+    this.kittens$ = this.kittenService.getKittens();
 
   }
   adoptKitten() {
