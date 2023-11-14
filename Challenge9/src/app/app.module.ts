@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { KittenInfosDirective } from './directives/kitten-infos.directive';
 import { KittenTileComponent } from './kitten-tile/kitten-tile.component';
+import { UserTileComponent } from './user-tile/user-tile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { KittenTileComponent } from './kitten-tile/kitten-tile.component';
     UserKittenComponent,
     HeaderComponent,
     KittenInfosDirective,
-    KittenTileComponent
+    KittenTileComponent,
+    UserTileComponent
   ],
   imports: [
     BrowserModule,

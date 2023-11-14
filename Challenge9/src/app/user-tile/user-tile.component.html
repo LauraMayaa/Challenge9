@@ -1,0 +1,12 @@
+<div class="kitten-item">
+    <div>
+        <img [src]="kitten.image" alt="Kitten">
+        <!-- <img [src]="kitten.image" alt="Kitten" *ngIf="kitten.adopted == false"> -->
+
+        <button (click)="onDelete()">delete</button>
+    </div>
+</div>
+
+<!-- *ngFor="let k of kittens$|async" -->
+
+<!-- *ngIf="k.adopted" -->

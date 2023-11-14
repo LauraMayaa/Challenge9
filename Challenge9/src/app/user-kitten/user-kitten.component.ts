@@ -11,20 +11,26 @@ import { Observable, of } from 'rxjs';
 export class UserKittenComponent implements OnInit {
 
 
-  kittens$: Observable<Kitten[]> = of();
-  isAdopted: boolean = true
+  kittens$: Observable<Kitten[]> = of([]);
+  isAdopted: boolean = false
 
   constructor(public kittenService: KittenService) { }
+
+
 
   ngOnInit() {
     // console.table(this.kittens)
     this.kittens$ = this.kittenService.getKittens();
 
   }
-  adoptKitten() {
 
-    this.isAdopted = !this.isAdopted
-  }
+  // onDelete() {
+
+  // }
+  // adoptKitten() {
+
+  //   this.isAdopted = !this.isAdopted
+  // }
 
 
 }
